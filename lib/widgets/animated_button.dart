@@ -6,13 +6,15 @@ class AnimatedButton extends StatefulWidget {
   final String buttonText;
   final Color color;
 
-  AnimatedButton(
-      {required this.height,
+  const AnimatedButton(
+      {super.key,
+      required this.height,
       required this.width,
       required this.buttonText,
       required this.color});
 
   @override
+  // ignore: library_private_types_in_public_api
   _AnimatedButtonState createState() => _AnimatedButtonState();
 }
 
@@ -26,8 +28,8 @@ class _AnimatedButtonState extends State<AnimatedButton>
   void initState() {
     super.initState();
     textColor = widget.color;
-    controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+    controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 300));
     animation = Tween(begin: 0.0, end: widget.height).animate(
       CurvedAnimation(
         curve: Curves.easeIn,
@@ -40,7 +42,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         height: widget.height,
         width: widget.width,
         child: Material(
@@ -84,13 +86,13 @@ class _AnimatedButtonState extends State<AnimatedButton>
                   ),
                   Center(
                     child: AnimatedDefaultTextStyle(
-                      child: Text(widget.buttonText),
-                      duration: Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       style: TextStyle(
                         color: textColor,
                         fontWeight: FontWeight.bold,
                       ),
                       curve: Curves.easeIn,
+                      child: Text(widget.buttonText),
                     ),
                   )
                 ],
