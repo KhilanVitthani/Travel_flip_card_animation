@@ -48,18 +48,6 @@ class _TripCardState extends State<TripCard>
             _controller.reverse();
           }
         },
-
-        // onTap: () {
-        //   setState(() {
-        //     isTap = !isTap;
-        //   });
-        //   if (isTap) {
-        //     _controller.forward();
-        //   } else {
-        //     _controller.reverse();
-        //   }
-        // },
-
         child: Transform.translate(
           offset: _animation.value,
           child: Stack(
