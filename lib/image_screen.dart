@@ -20,7 +20,7 @@ class ImageScreen extends StatelessWidget {
               clipper: RightCornerClipper(),
               child: Image(
                 image: NetworkImage(
-                    'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg'),
+                    'https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg'),
                 fit: BoxFit.cover,
               )),
     );
